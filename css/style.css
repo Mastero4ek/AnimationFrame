@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.69444444444444vw;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  text-rendering: auto;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font:inherit;
+  text-align: inherit;
+  padding: 0;
+  background-color: inherit;
+  text-rendering: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.main {
+  padding: 3rem 10rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(105,129,255);
+  background: radial-gradient(circle, rgba(105,129,255,1) 25%, #b18597 95%);
+}
+
+.animation {
+  position: relative;
+  width: 5rem;
+  height: 75vh;
+}
+
+.animation__bomb {
+  position: absolute;
+  left: 0;
+  width: 5rem;
+  height: 5rem;
+}
+
+.animation__explosion {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  transition: opacity .1s;
+  opacity: 0;
+}
+
+.explosion-1 {
+  left: 50%;
+  bottom: -8rem;
+  transform: translateX(-90%);
+}
+
+.explosion-2 {
+  left: 50%;
+  bottom: -5rem;
+  transform: translateX(-50%);
+}
+
+.explosion-3 {
+  left: 50%;
+  bottom: -6rem;
+  transform: translateX(-10%);
+}
+
+.active {
+  opacity: 1;
+}
+
+.inactive {
+  opacity: 0;
+}
+
+.controlls__button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 15px;
+  min-width: 15rem;
+  text-align: center;
+}
+
+.controlls__button {
+  font-weight: 600;
+  color: rgb(105,129,255);
+  text-transform: uppercase;
+  padding: 1rem 5rem;
+  background: #fff0f0;
+  border: .2rem solid #b18597;
+  border-radius: 1rem;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.controlls__button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  -webkit-box-shadow: 0 0 0 .2rem #b18597, 0 0.625em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 .2rem #b18597, 0 0.5rem 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.75rem, -1rem);
+  transform: translate3d(0, 0.75rem, -1rem);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.controlls__button:hover {
+  background: #ffe9e9;
+  -webkit-transform: translate(0, 0.25rem);
+  transform: translate(0, 0.25rem);
+}
+
+.controlls__button:hover::before {
+  -webkit-box-shadow: 0 0 0 .2rem #b18597, 0 0.5rem 0 0 #ffe3e2;
+  box-shadow: 0 0 0 .2rem #b18597, 0 0.5rem 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.5rem, -1rem);
+  transform: translate3d(0, 0.5rem, -1rem);
+}
+
+.controlls__button:active {
+  background: #ffe9e9;
+  -webkit-transform: translate(0rem, 0.75rem);
+  transform: translate(0rem, 0.75rem);
+}
+
+.controlls__button:active::before {
+  -webkit-box-shadow: 0 0 0 .2rem #b18597, 0 0 #ffe3e2;
+  box-shadow: 0 0 0 .2rem #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1rem);
+  transform: translate3d(0, 0, -1rem);
+}
+
+.play {
+  margin-right: 10rem;
+}
